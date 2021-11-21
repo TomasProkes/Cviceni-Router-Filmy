@@ -1,15 +1,22 @@
 import React from 'react';
+import {
+	Link,
+  } from 'react-router-dom';
+  
 import movies from './../../movies.js';
 
 const MovieList = () => {
 	return (
-		<nav className="movie-list">
-			{
-				movies.map((movie) => (
-					<p key={movie.id}>{movie.title}</p>
-				))
-			}
-    </nav>
+		<>
+			<h1>Movies</h1>
+			<nav className="movie-list">
+				{
+					movies.map((movie) => (
+						<Link key={movie.id} to={`/movies/${movie.id}`}>{movie.title}</Link>
+					))
+				}
+			</nav>
+		</>
 	)
 }
 
